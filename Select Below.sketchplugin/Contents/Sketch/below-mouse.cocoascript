@@ -11,7 +11,7 @@ var onRun = function(context) {
   var handler = doc.eventHandlerManager().normalHandler();
   var page = doc.currentPage();
   var container = (page.currentArtboard()) ? page.currentArtboard() : page;
-  var point = handler.mouseInScreenCoordinatesInGroup(container);
+  var point = handler.currentMousePointInCanvasCoordinates();
 
   // for some reason, we need to add container y position to the calculation
   var bottom = point.y + container.frame().y();
